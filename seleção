@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Usuários</title>
+    <div class="usu">
+
+</head>
+
+<body>
+
+    <h2>Contatos</h2>
+
+    <table>
+        <div>
+
+            <label for="pesquisa"></label>
+            <input type="text" id="pesquisa" onkeyup="filtrarUsuarios()" placeholder="Pesquisar usuário">
+            <br>
+            <br>
+        </div>
+
+        <div class="usui">
+            <img style=" width: 45px; height: 45px; border-radius: 50%;"
+                src="https://avatars.githubusercontent.com/u/129443003?v=4" alt="Foto de perfil">
+        </div>
+        <br>
+        <br>
+        <th>Sandro</th>
+    </table>
+    <div class="usui">
+        <img style=" width: 45px; height: 45px; border-radius: 50%;"
+            src="https://avatars.githubusercontent.com/u/25065347?s=48&v=4" alt="Foto de perfil">
+    </div>
+    <br>
+    <br>
+    <th>Jorge</th>
+    </div>
+    </table>
+    <!-- <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Usuário</th>
+            <th>Foto</th>
+            <th>Nascimento</th>
+            <th>Sexo</th>
+            <th>Status</th>
+            <th>Cadastro</th>
+        </tr>
+    </thead>
+    <tbody>
+         Aqui serão inseridos os dados dos usuários 
+    </tbody>
+</table> -->
+
+    <script>
+
+        var usuarios = [
+
+        ];
+
+
+        function popularTabela() {
+            var tbody = document.querySelector('tbody');
+            usuarios.forEach(function (usuario) {
+                var tr = document.createElement('tr');
+                tr.innerHTML = `
+                <td>${usuario.id}</td>
+                <td>${usuario.nome}</td>
+                <td>${usuario.usuario}</td>
+                <td>${usuario.foto}</td>
+                <td>${usuario.nascimento}</td>
+                <td>${usuario.sexo}</td>
+                <td>${usuario.status}</td>
+                <td>${usuario.cadastro}</td>
+            `;
+                tbody.appendChild(tr);
+            });
+        }
+
+
+        window.onload = popularTabela();
+
+        function filtrarUsuarios() {
+            var input, filter, table, tbody, tr, td, i, txtValue;
+            input = document.getElementById("pesquisa");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tbody = table.querySelector("tbody");
+            tr = tbody.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1]; // Coluna do Nome
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
