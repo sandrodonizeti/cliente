@@ -1,0 +1,18 @@
+.usu {
+    position: fixed;
+    bottom: 0;
+    right: 7px;
+    border: 3px solid #3f4146;
+    height: 350px;
+    width: 330px;
+    overflow: auto;
+    background: #f1f1f1;
+    z-index: 9;
+    border-radius: 8px;
+}
+
+.usui {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
