@@ -1,0 +1,165 @@
+Chat centralizado
+.usu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #3f4146;
+    height: 350px;
+    width: 330px;
+    overflow: auto;
+    background: #f1f1f1;
+    z-index: 9;
+    border-radius: 8px;
+}
+
+Chat canto inferior direito
+.usu {
+    position: fixed;
+    bottom: 0;
+    right: 7px;
+    border: 3px solid #3f4146;
+    height: 350px;
+    width: 330px;
+    overflow: auto;
+    background: #f1f1f1;
+    z-index: 9;
+    border-radius: 8px;
+}
+
+inserção no banco de dados
+
+    <h2>Inserir Novo Usuário</h2>
+
+    <form id="formUsuario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+
+        <label for="foto">Foto:</label>
+        <input type="text" id="foto" name="foto"><br><br>
+
+        <label for="nascimento">Nascimento:</label>
+        <input type="date" id="nascimento" name="nascimento"><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+            <option value="Prefiro não responder">Prefiro não responder</option>
+        </select><br><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Disponível">Disponível</option>
+            <option value="Ocupado">Ocupado</option>
+            <option value="No trabalho">No trabalho</option>
+            <option value="Na escola">Na escola</option>
+        </select><br><br>
+
+        <button type="submit">Inserir Usuário</button>
+    </form>
+
+    <div class="usu">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Usuário</th>
+                    <th>Foto</th>
+                    <th>Nascimento</th>
+                    <th>Sexo</th>
+                    <th>Status</th>
+                    <th>Cadastro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aqui serão inseridos os dados dos usuários -->
+            </tbody>
+        </table>
+    </div>
+
+    cript
+        document.getElementById("formUsuario").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio do formulário tradicional
+
+            // Captura os valores dos campos do formulário
+            var nome = document.getElementById("nome").value;
+            var usuario = document.getElementById("usuario").value;
+            var foto = document.getElementById("foto").value;
+            var nascimento = document.getElementById("nascimento").value;
+            var senha = document.getElementById("senha").value;
+            var sexo = document.getElementById("sexo").value;
+            var status = document.getElementById("status").value;
+
+            // Cria um novo objeto de usuário com os valores do formulário
+            var novoUsuario = {
+                nome: nome,
+                usuario: usuario,
+                foto: foto,
+                nascimento: nascimento,
+                senha: senha,
+                sexo: sexo,
+                status: status
+            };
+
+            // Envia os dados para o servidor
+            fetch('inserir_usuario.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(novoUsuario),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Limpa os campos do formulário
+                document.getElementById("formUsuario").reset();
+
+                // Adiciona o novo usuário ao array de usuários
+                usuarios.push(data);
+
+                // Atualiza a tabela de usuários
+                popularTabela();
+            })
+            .catch((error) => {
+                console.error('Erro:', error);
+            });
+        });
+
+        var usuarios = [];
+
+        function popularTabela() {
+            var tbody = document.querySelector('tbody');
+            tbody.innerHTML = ''; // Limpa os dados antigos da tabela
+            usuarios.forEach(function(usuario) {
+                var tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${usuario.id}</td>
+                    <td>${usuario.nome}</td>
+                    <td>${usuario.usuario}</td>
+                    <td>${usuario.foto}</td>
+                    <td>${usuario.nascimento}</td>
+                    <td>${usuario.sexo}</td>
+                    <td>${usuario.status}</td>
+                    <td>${usuario.cadastro}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        window.onload = popularTabela;
+
+        function filtrarUsuarios() {
+            var input, filter, table, tbody, tr, td, i, txtValue;
+        }
+    cript
+
+
