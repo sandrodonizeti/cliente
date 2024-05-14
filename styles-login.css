@@ -8,15 +8,13 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     background-color: rgb(236, 234, 122);
     padding: 20px;
     border-radius: 8px;
-    margin-top: 200px;
-    margin-left: 600px;
-    margin-right: 600px;
+    margin: 130px auto 20px; 
 }
-
 h2 {
     text-align: center;
 }

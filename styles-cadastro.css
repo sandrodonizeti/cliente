@@ -7,14 +7,14 @@ body {
     background-color: #1f2df5;
 }
 
-.container {
-    width: 400px;
+.container {  
+    width: 90%;
+    max-width: 400px;
     background-color: rgb(236, 234, 122);
     padding: 20px;
     border-radius: 15px;
-    margin-left: 600px;
-    margin-right: 600px;
-    margin-top: 2px;
+    border-radius: 8px;
+    margin: 130px auto 20px;
 }
 
 h2 {
@@ -61,3 +61,4 @@ button:hover {
     width: 300px;
     height: 15px;
 }
+
