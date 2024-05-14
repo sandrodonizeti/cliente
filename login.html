@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles-cadastro.css">
+        <link rel="fotos" href="fotos">
+        <title>Cadastro</title>
+    </head>
+    <div class="f">
+        <img src="fotos/Tweet-Web.png" width=" 300 px">
+    </div>
 <body>
     <div class="container">
-        <h2>Login</h2>
+        <h2><img src="fotos/logo.png" width=" 300 px"></h2>
         <form>
             <div class="form-group">
                 <label for="usuario">Usuário:</label>
                 <input type="text" id="usuario" name="usuario" required>
             </div>
-            <div class="form-group">
+            <div class="form-group password-input">
                 <label for="senha">Senha:</label>
                 <input type="password" id="senha" name="senha" required>
+                <i class="password-icon toggle-password" onclick="togglePasswordVisibility('senha')">👁️</i>
             </div>
             <button type="submit">Entrar</button>
         </form>
     </div>
+    
+    <script>
+        function togglePasswordVisibility(inputId) {
+            const input = document.getElementById(inputId);
+            input.type === 'password' ? input.type = 'text' : input.type = 'password';
+            input.type === 'password' ? input.nextElementSibling.textContent = '👁️' : input.nextElementSibling.textContent = '🙈';
+        }
+    </script>
 </body>
 </html>
