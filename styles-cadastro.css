@@ -12,9 +12,8 @@ body {
     background-color: rgb(236, 234, 122);
     padding: 20px;
     border-radius: 8px;
-    margin-left: 600px;
-    margin-right: 600px; 
-    margin-top: 10px;
+    margin: 130px auto 20px;
+    margin-top: 38px;
 }
 
 h2 {
