@@ -4,42 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-seleção.css">
+    <link rel="fotos" href="fotos">
     <title>Usuários</title>
-    <div class="usu">
+
 
 </head>
+<div class="f">
+    <img src="fotos/Tweet-Web.png" width=" 300 px">
+</div>
 
 <body>
+    <div class="usu">
 
-    <h2>Contatos</h2>
+        <h2>Contatos</h2>
 
-    <table>
-        <div>
-
-            <label for="pesquisa"></label>
-            <input type="text" id="pesquisa" onkeyup="filtrarUsuarios()" placeholder="Pesquisar usuário">
+        <table>
+            <div>
+                <label for="pesquisa"></label>
+                <input type="text" id="pesquisa" placeholder="Nome do usuário">
+                <button onclick="filtrarUsuarios()">Pesquisar</button>
+                <br>
+                <br>
+            </div>
+            <div class="usui">
+                <img style=" width: 45px; height: 45px; border-radius: 50%;"
+                    src="https://avatars.githubusercontent.com/u/129443003?v=4" alt="Foto de perfil">
+            </div>
             <br>
+            &emsp;<th>Sandro</th>
+        </table>
+        <br>
+        <table>
+            <div class="usui">
+                <img style=" width: 45px; height: 45px; border-radius: 50%;"
+                    src="https://avatars.githubusercontent.com/u/25065347?s=48&v=4" alt="Foto de perfil">
+            </div>
             <br>
-        </div>
-
-        <div class="usui">
-            <img style=" width: 45px; height: 45px; border-radius: 50%;"
-                src="https://avatars.githubusercontent.com/u/129443003?v=4" alt="Foto de perfil">
-        </div>
-        <br>
-        <br>
-        <th>Sandro</th>
-    </table>
-    <div class="usui">
-        <img style=" width: 45px; height: 45px; border-radius: 50%;"
-            src="https://avatars.githubusercontent.com/u/25065347?s=48&v=4" alt="Foto de perfil">
+            &emsp;<th>Jorge</th> 
+        </table>
     </div>
-    <br>
-    <br>
-    <th>Jorge</th>
-    </div>
-    </table>
+   
     <!-- <table>
     <thead>
         <tr>
