@@ -8,16 +8,28 @@ body {
 }
 
 .usu {
-    position: fixed;
     bottom: 0;
-    right: 7px;
-    border: 3px solid #3f4146;
-    height: 350px;
-    width: 330px;
+    border: 2px solid #141414;
+    height: 400px;
+    max-width: 330px;
     overflow: auto;
     background: rgb(255, 255, 253);
-    z-index: 9;
     border-radius: 8px;
+    margin: 130px auto 20px; 
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 .usui {
