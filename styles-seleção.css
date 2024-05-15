@@ -15,7 +15,7 @@ body {
     height: 350px;
     width: 330px;
     overflow: auto;
-    background: rgb(236, 234, 122);
+    background: rgb(255, 255, 253);
     z-index: 9;
     border-radius: 8px;
 }
