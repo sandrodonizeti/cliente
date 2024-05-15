@@ -4,7 +4,7 @@ body {
     font-family: Arial, sans-serif;
     justify-content: center;
     height: 100vh;
-    background-color: #1f2df5;
+    background-color: #293995;
 }
 
 .container {
@@ -12,6 +12,7 @@ body {
     background-color: rgb(236, 234, 122);
     padding: 20px;
     border-radius: 8px;
+    border: 2px solid black;
     margin: 130px auto 20px; 
 }
 h2 {
